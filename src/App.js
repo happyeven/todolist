@@ -10,6 +10,7 @@ import {HashRouter as Router, Route, HashRouter} from 'react-router-dom';
 import Button from './hookcomponent/button';
 import {Container} from './hookcomponent/context/container'
 import ReducerButton from "./hookcomponent/hookbuttonusereducer";
+import HistoryButton from "./hookcomponent/historybutton";
 
 class App extends React.Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class App extends React.Component {
                 <Button/>
                 <Container/>
                 <ReducerButton/>
+                <HistoryButton />
             </div>
         );
     }
