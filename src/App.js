@@ -4,33 +4,34 @@ import './App.css';
 import ToDoListPage from './components/ToDoListPage';
 import FinishList from './components/FinishList';
 import TopMenu from './components/Menu';
-import { Spin } from 'antd';
-import { connect } from 'react-redux';
-import { HashRouter as Router, Route, HashRouter } from 'react-router-dom'
+import {Spin} from 'antd';
+import {connect} from 'react-redux';
+import {HashRouter as Router, Route, HashRouter} from 'react-router-dom';
+import Button from './components/button';
+
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+    constructor(props) {
+        super(props)
+    }
 
-  render() {
-    return (
-      <div className="App">
+    render() {
+        return (
+            <div className="App">
 
-        <HashRouter>
-          <TopMenu />
-          <Spin spinning={this.props.loading}>
-            <Route exact path="/" component={ToDoListPage} />
-          </Spin>
-          <Route path="/finish" component={FinishList} />
-        </HashRouter>
-
-      </div>
-    );
-  }
+                {/*<HashRouter>*/}
+                {/*  <TopMenu />*/}
+                {/*  <Route exact path="/" component={ToDoListPage} />*/}
+                {/*  <Route path="/finish" component={FinishList} />*/}
+                {/*</HashRouter>*/}
+                <Button/>
+            </div>
+        );
+    }
 }
 
 const mapStateToProps = state => {
-  return { loading: state.loadingReducer.loading };
+    return {loading: state.loadingReducer.loading};
 }
 
-export default connect(mapStateToProps)(App)
+//export default connect(mapStateToProps)(App)
+export default App
