@@ -7,7 +7,8 @@ import TopMenu from './components/Menu';
 import {Spin} from 'antd';
 import {connect} from 'react-redux';
 import {HashRouter as Router, Route, HashRouter} from 'react-router-dom';
-import Button from './components/button';
+import Button from './hookcomponent/button';
+import {Container} from './hookcomponent/context/container'
 
 class App extends React.Component {
     constructor(props) {
@@ -18,12 +19,13 @@ class App extends React.Component {
         return (
             <div className="App">
 
-                {/*<HashRouter>*/}
-                {/*  <TopMenu />*/}
-                {/*  <Route exact path="/" component={ToDoListPage} />*/}
-                {/*  <Route path="/finish" component={FinishList} />*/}
-                {/*</HashRouter>*/}
+                <HashRouter>
+                  <TopMenu />
+                  <Route exact path="/" component={ToDoListPage} />
+                  <Route path="/finish" component={FinishList} />
+                </HashRouter>
                 <Button/>
+                <Container/>
             </div>
         );
     }
